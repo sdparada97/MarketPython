@@ -8,3 +8,5 @@ class Producto:
         self.precio_valor = precio_valor
         self.cantidad = cantidad
         self.descuento = descuento
+
+    #Metodos -----> PRODUCTO
