@@ -5,6 +5,7 @@ import Clases.Supermercado
 
 
 def main():
+    supermercadoDonSergio = Clases.Supermercado.Supermercado("Don Sergio", "Cr 96 I # 16 F 17", "3057752461")
     opcion = 0
     while(opcion < 8):
         opcion = int(input(
@@ -33,7 +34,36 @@ def main():
 
         if(opcion == 1):
             # Agregar Empleado
-            pass
+            opcion1 = int(input("""
+            INGRESE EL TIPO DE EMPLEADO QUE DESEA AGREGAR: 
+            1) CAJERO
+            2) ADMINISTRADOR
+            """))
+
+            if(opcion1 == 1):
+                # Agregar Cajero
+                nombreCajero = input("INGRESE NOMBRE DEL CAJERO: ")
+                cedulaCajero = input("INGRESE CEDULA DEL CAJERO: ")
+                telefonoCajero = input("INGRESE TELEFONO DEL CAJERO: ")
+                tipoContratoCajero = input("INGRESE TIPO DE CONTRATO DEL CAJERO: ")
+                sueldoCajero = int(input("INGRESE SUELDO DEL CAJERO: "))
+
+                cajero = Clases.Empleados.Cajero(nombreCajero, cedulaCajero, telefonoCajero, tipoContratoCajero, sueldoCajero)
+
+                supermercadoDonSergio.AgregarCajero(cajero)
+            elif(opcion1 == 2):
+                # Agregar Administrador
+                nombreAdmin = input("INGRESE NOMBRE DEL ADMINISTRADOR: ")
+                cedulaAdmin = input("INGRESE CEDULA DEL ADMINISTRADOR: ")
+                telefonoAdmin = input("INGRESE TELEFONO DEL ADMINISTRADOR: ")
+                tipoContratoAdmin = input("INGRESE TIPO DE CONTRATO DEL ADMINISTRADOR: ")
+                sueldoAdmin = int(input("INGRESE SUELDO DEL ADMINISTRADOR: "))
+
+                administrador = Clases.Empleados.Administrador(nombreAdmin, cedulaAdmin, telefonoAdmin, tipoContratoAdmin, sueldoAdmin)
+
+                supermercadoDonSergio.AgregarCajero(administrador)
+            else:
+                print("OPCION INCORRECTA VUELVA !!")
         elif(opcion == 2):
             # Agregar Producto
             pass

@@ -19,14 +19,15 @@ class Empleado(ABC):
 # CLASE -----------> CAJERO
 class Cajero(Empleado):
 
+    total_ventas = 0
+
     #Constructor -----> PRODUCTO
-    def __init__(self,nombre, cedula, telefono, tipo_contrato, sueldo, numero_ventas):
+    def __init__(self,nombre, cedula, telefono, tipo_contrato, sueldo):
         super().__init__(nombre, cedula, telefono, tipo_contrato, sueldo)
-        self.numero_ventas = numero_ventas
 
     #Metodos -----> PRODUCTO
     def CalcularSueldo(self):
-        return self.sueldo
+        return self.sueldo + (self.totalVentas*0.10)
     
     def __str__(self):
         return """
@@ -43,7 +44,7 @@ class Administrador(Empleado):
     empleadosACargo = []
 
     #Constructor -----> PRODUCTO
-    def __init__(self,nombre, cedula, telefono, tipo_contrato, sueldo, numero_ventas):
+    def __init__(self,nombre, cedula, telefono, tipo_contrato, sueldo):
         super().__init__(nombre, cedula, telefono, tipo_contrato, sueldo)
         
 
