@@ -25,7 +25,7 @@ class Supermercado:
             if(prod.id == idProducto):
                 if(prod.cantidad == 0):
                     print("NO HAY STACK DEL PRODUCTO")
-                else if(prod.cantidad >= cantidadProductoVendido):
+                elif(prod.cantidad >= cantidadProductoVendido):
                     #LOGICA DE CANTIDAD DE PRODUCTO VENDIDO
                     prod.cantidad = prod.cantidad - cantidadProductoVendido
                     
