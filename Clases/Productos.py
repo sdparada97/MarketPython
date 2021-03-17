@@ -6,7 +6,8 @@ class Producto:
     precioDescuento = 0
 
     #Constructor -----> PRODUCTO
-    def __init__(self,nombre, precio_valor, cantidad):
+    def __init__(self,id,nombre, precio_valor, cantidad):
+        self.id = id
         self.nombre = nombre
         self.precio_valor = precio_valor
         self.cantidad = cantidad
@@ -21,22 +22,24 @@ class Producto:
             self.descuento = descuento/100
             self.PrecioConDescuento(descuento)
         else:
-            print("ESE PORCENTAJE NO SE ENCUENTRA DENTRO DEL RANGO (0 % - 50 %)")
+            print("ESE PORCENTAJE NO SE ENCUENTRA DENTRO DEL RANGO (0 % - 50 %)")    
 
     def __str__(self):
         str_producto = ""
         if(self.descuento != 0):
             str_producto = """
+        ID:                     \t{}
         NOMBRE:                 \t{}
         PRECIO:                 \t{}
         CANTIDAD:               \t{}
         DESCUENTO:              \t{}%
-        PRECIO CON DESCUENTO:   \t{}""".format(self.nombre,self.precio_valor,self.cantidad,self.descuento*100,self.precioDescuento)
+        PRECIO CON DESCUENTO:   \t{}""".format(self.id,self.nombre,self.precio_valor,self.cantidad,self.descuento*100,self.precioDescuento)
         else:
             str_producto = """
+        ID:                   \t{}
         NOMBRE:               \t{}
         PRECIO:               \t{}
-        CANTIDAD:             \t{}""".format(self.nombre,self.precio_valor,self.cantidad)
+        CANTIDAD:             \t{}""".format(self.id,self.nombre,self.precio_valor,self.cantidad)
         
         return str_producto
 
