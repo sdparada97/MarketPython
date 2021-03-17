@@ -61,5 +61,4 @@ class Administrador(Empleado):
         CEDULA:             \t{}
         TELEFONO:           \t{}
         TIPO_CONTRATO:      \t{}
-        SUELDO:             \t{}
-        NUMERO DE VENTAS:   \t{}""".format(self.nombre,self.cedula,self.telefono,self.tipo_contrato,self.sueldo,self.numero_ventas)
+        SUELDO:             \t{}""".format(self.nombre,self.cedula,self.telefono,self.tipo_contrato,self.sueldo)

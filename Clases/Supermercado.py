@@ -5,9 +5,12 @@ import Clases.Productos
 class Supermercado:
 
     totalVentas = 0;
+    empleados=[]
+    productos=[]
+    facturas=[]
 
     #Constructor -----> SUPERMERCADO
-    def __init__(self, nombre, direccion, telefono, empleados=[], productos=[], facturas=[]):
+    def __init__(self, nombre, direccion, telefono):
         self.nombre = nombre
         self.direccion = direccion
         self.telefono = telefono
@@ -28,7 +31,7 @@ class Supermercado:
                 elif(prod.cantidad >= cantidadProductoVendido):
                     #LOGICA DE CANTIDAD DE PRODUCTO VENDIDO
                     prod.cantidad = prod.cantidad - cantidadProductoVendido
-                    
+
                     #LOGICA DE VENTA PRODUCTO 
                     if(prod.precioDescuento == 0):
                         valorVenta = cantidadProductoVendido * prod.precio_valor

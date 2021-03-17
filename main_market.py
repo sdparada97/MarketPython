@@ -75,7 +75,12 @@ def main():
             pass
         elif(opcion == 5):
             # Conocer lista de los empleados
-            pass
+            print("""
+            ###################### LISTA DE EMPLEADOS ######################
+            """)
+            for empleado in supermercadoDonSergio.empleados:
+                print(empleado)
+            print("\n\n")
         elif(opcion == 6):
             # Conocer los productosConocer los productos
             pass
