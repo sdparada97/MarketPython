@@ -7,6 +7,7 @@ import Clases.Supermercado
 def main():
     supermercadoDonSergio = Clases.Supermercado.Supermercado("Don Sergio", "Cr 96 I # 16 F 17", "3057752461")
     opcion = 0
+    incrementalIdProducto = 0
     while(opcion < 8):
         opcion = int(input(
             """
@@ -66,7 +67,22 @@ def main():
                 print("OPCION INCORRECTA VUELVA !!")
         elif(opcion == 2):
             # Agregar Producto
-            pass
+            incrementalIdProducto += 1
+
+            idProducto = incrementalIdProducto
+            nombreProducto = input("""INGRESE EL NOMBRE DEL PRODUCTO: """)
+            precioProducto = int(input("""INGRESE EL PRECIO DEL PRODUCTO: """))
+            cantidadProducto = int(input("""INGRESE LA CANTIDAD DEL PRODUCTO: """))
+            banderaDescuento = int(input("""SI QUIERE AGREGAR DIGITE 1 (SI) Y 0 (NO): """))
+            
+            nuevoProducto = Clases.Productos.Producto(idProducto, nombreProducto, precioProducto, cantidadProducto)
+
+            if(banderaDescuento == 1):
+                descuentoProducto = int(input("""INGRESE EL DESCUENTO DEL PRODUCTO: """))
+                nuevoProducto.AgregarDescuento(descuentoProducto)
+
+            supermercadoDonSergio.AgregarProducto(nuevoProducto)
+            print(nuevoProducto)
         elif(opcion == 3):
             # Realizar una venta con su Factura
             pass

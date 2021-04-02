@@ -4,7 +4,7 @@ import Clases.Productos
 # CLASE -----------> SUPERMERCADO
 class Supermercado:
 
-    totalVentas = 0;
+    totalVentas = 0
     empleados=[]
     productos=[]
     facturas=[]
