@@ -27,7 +27,7 @@ class Cajero(Empleado):
 
     #Metodos -----> PRODUCTO
     def CalcularSueldo(self):
-        return self.sueldo + (self.totalVentas*0.10)
+        return self.sueldo + (self.total_ventas*0.10)
     
     def __str__(self):
         return """

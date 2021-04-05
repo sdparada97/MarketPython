@@ -92,6 +92,7 @@ def main():
             productosVenta = []
             vender = 0
             totalVenta = 0 
+            # LOGICA DE  VENTA DE PRODUCTOS
             while vender == 0:
                 print("""
                 ###################### LISTA DE PRODUCTOS #######################
@@ -137,7 +138,10 @@ def main():
                 if(isinstance(emp,Clases.Empleados.Cajero)):
                     if(emp.cedula == cedulaCliente):
                         emp.total_ventas += totalVenta
+            
+            supermercadoDonSergio.totalVentas += totalVenta
 
+            # FACTURA DE VENTA
             print("""
             ###################### FACTURA VENTA ############################
                 CC :        \t{}
@@ -161,7 +165,10 @@ def main():
 
         elif(opcion == 4):
             # Conocer el total de ventas
-            pass
+            if(supermercadoDonSergio.totalVentas == 0):
+                print("NO SE HA REALIZADO NINGUNA VENTA")
+            else:
+                print("TOTAL DE VENTAS DEL SUPERMERCADO: " + str(supermercadoDonSergio.totalVentas))
         elif(opcion == 5):
             # Conocer lista de los empleados
             print("""
@@ -169,6 +176,9 @@ def main():
             """)
             for empleado in supermercadoDonSergio.empleados:
                 print(empleado)
+            print("""
+            #################################################################
+            """)
             print("\n\n")
         elif(opcion == 6):
             # Conocer los productosConocer los productos
@@ -177,20 +187,24 @@ def main():
             """)
             for producto in supermercadoDonSergio.productos:
                 print(producto)
+            print("""
+            #################################################################
+            """)
             print("\n\n")
         elif(opcion == 7):
             # Conocer el sueldo de los empleados actual
-            pass
+            print("""
+            ################# LISTA DE EMPLEADOS-SUELDOS ####################
+            """)
+            for emp in supermercadoDonSergio.empleados:
+                sueldoEmp = emp.CalcularSueldo()
+                print("\t\t" + emp.nombre + " - " + emp.cedula + " - $"+ str(sueldoEmp))
+            print("""
+            #################################################################
+            """)
 
 
 
 
 if __name__ == "__main__":
     main()
-"""
-cajero1 = Clases.Empleados.Cajero("SERGIO","1016095700","3057752461","INDEFINIDO",1500000,0)
-print(cajero1)
-print("\n TIPO DE EMPELADO: ", type(cajero1))-
-producto1.AgregarDescuento(10)
-print(producto1)
-"""
