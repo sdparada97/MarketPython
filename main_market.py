@@ -97,7 +97,7 @@ def main():
                 ###################### LISTA DE PRODUCTOS #######################
                 """)
                 for producto in supermercadoDonSergio.productos:
-                    print(str(producto.id) + ' - ' + producto.nombre)
+                    print('\t\t'+str(producto.id) + ' - ' + producto.nombre)
                 print("""
                 #################################################################
                 """)
@@ -107,7 +107,12 @@ def main():
                 
                 valorProductoVenta = supermercadoDonSergio.VenderProducto(idProductoVenta, cantidadProductoVenta)
 
-                productoVenta = [idProductoVenta,,cantidadProductoVenta,valorProductoVenta]
+                nombreProductoVenta = ''
+                for producto in supermercadoDonSergio.productos:
+                    if(producto.id == idProductoVenta):
+                        nombreProductoVenta = producto.nombre
+
+                productoVenta = [nombreProductoVenta,cantidadProductoVenta,valorProductoVenta]
                 productosVenta.append(productoVenta)
                 totalVenta += valorProductoVenta
 
