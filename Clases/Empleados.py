@@ -36,7 +36,7 @@ class Cajero(Empleado):
         TELEFONO:           \t{}
         TIPO_CONTRATO:      \t{}
         SUELDO:             \t{}
-        NUMERO DE VENTAS:   \t{}""".format(self.nombre,self.cedula,self.telefono,self.tipo_contrato,self.sueldo,self.numero_ventas)
+        TOTAL DE VENTAS:   \t{}""".format(self.nombre,self.cedula,self.telefono,self.tipo_contrato,self.total_ventas)
 
 # CLASE -----------> CAJERO
 class Administrador(Empleado):
